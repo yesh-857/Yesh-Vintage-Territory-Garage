@@ -1,0 +1,66 @@
+<!-- products.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RetroMoto Territory — Products</title>
+  <meta name="description" content="Discover the curated collection of classic vintage motorcycles at RetroMoto Territory.">
+  <style>
+    :root{--bg:#f6f4ef;--accent:#8b5e3c}
+    *{box-sizing:border-box}
+    body{font-family:Inter, Arial;margin:0;background:var(--bg);color:#222}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{padding:18px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;padding:12px;border-radius:10px;box-shadow:0 6px 15px rgba(0,0,0,0.06)}
+    .bike{height:180px;width:100%;object-fit:cover;border-radius:8px}
+    .buy{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none}
+    @media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav style="display:flex;gap:14px;align-items:center">
+        <div style="font-weight:800">RetroMoto Territory</div>
+        <div style="flex:1"></div>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="payment.html">Payments</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Our Collection</h1>
+      <p style="color:#666">Handpicked vintage motorcycles — descriptions and prices below. Click Buy to purchase or reserve.</p>
+
+      <section class="grid" style="margin-top:12px">
+        <article class="card">
+          <img class="bike" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Royal Classic 1956">
+          <h3>Royal Classic 1956</h3>
+          <p style="margin:6px 0;color:#555">A restored 1956 model with original chrome, leather seat. Price: ₹1,50,000</p>
+          <a class="buy" href="payment.html?product=Royal+Classic+1956&price=150000">Buy</a>
+        </article>
+
+        <article class="card">
+          <img class="bike" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Harbor Tracker 1963">
+          <h3>Harbor Tracker 1963</h3>
+          <p style="margin:6px 0;color:#555">Classic commuter with upgraded brakes. Price: ₹95,000</p>
+          <a class="buy" href="payment.html?product=Harbor+Tracker+1963&price=95000">Buy</a>
+        </article>
+
+        <article class="card">
+          <img class="bike" src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Velocette Roadster 1950">
+          <h3>Velocette Roadster 1950</h3>
+          <p style="margin:6px 0;color:#555">An elegant small-town roadster. Price: ₹1,10,000</p>
+          <a class="buy" href="payment.html?product=Velocette+Roadster+1950&price=110000">Buy</a>
+        </article>
+      </section>
+    </main>
+
+    <footer style="margin-top:18px;color:#666;text-align:center">© RetroMoto Territory</footer>
+  </div>
+</body>
+</html>
