@@ -1,0 +1,62 @@
+<!-- payment.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RetroMoto Territory — Payment</title>
+  <meta name="description" content="Checkout page — complete your order at RetroMoto Territory.">
+  <style>
+    body{font-family:Inter, Arial;background:#f6f4ef;margin:0;color:#222}
+    .container{max-width:700px;margin:30px auto;padding:20px}
+    .card{background:white;padding:18px;border-radius:12px;box-shadow:0 8px 26px rgba(0,0,0,0.06)}
+    label{display:block;margin-top:10px;font-weight:600}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:6px}
+    .row{display:flex;gap:12px}
+    .row > *{flex:1}
+    .btn{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;background:#8b5e3c;color:white;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Checkout</h1>
+      <p style="color:#666;margin-top:4px">Complete your order — confirm details and place order.</p>
+
+      <form id="orderForm" action="thankyou.html" method="get">
+        <label>Product</label>
+        <input id="product" name="product" readonly />
+
+        <label>Price (₹)</label>
+        <input id="price" name="price" readonly />
+
+        <label>Your Name</label>
+        <input name="name" required />
+
+        <label>Email</label>
+        <input name="email" type="email" required />
+
+        <label>Phone</label>
+        <input name="phone" required />
+
+        <label>Address</label>
+        <textarea name="address" rows="3" required></textarea>
+
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+
+      <p id="note" style="color:#777;margin-top:10px;font-size:13px">Note: this demo uses a simple GET redirect to simulate payment completion.</p>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get('product') || '';
+    const price = params.get('price') || '';
+    document.getElementById('product').value = decodeURIComponent(product);
+    document.getElementById('price').value = decodeURIComponent(price);
+    if(!product){document.getElementById('product').value = 'Custom Order';}
+    if(!price){document.getElementById('price').value = '0';}
+  </script>
+</body>
+</html>
